@@ -1,0 +1,15 @@
+.data {
+    line-height: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-title {
+    font-size: 24px;
+}
+
+.primary {
+    margin: 10px;
+    padding: 10px;
+}

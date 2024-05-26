@@ -1,34 +1,29 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## правила наименования веток: <тип задачи>/<описание задачи>.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1) тип задачи - feature, bug, stable
 
-## Expanding the ESLint configuration
+2) можно создавать ветки с типом feature для новых задач, и bug для исправлений 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+3) ветки stable создает только @schaf_run. 
 
-- Configure the top-level `parserOptions` property like this:
+4) все пулреквесты выставлять в ветку stable
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+5) НИ В КОЕМ СЛУЧАЕ НЕ ДЕЛАТЬ PUSH В ВЕТКИ «stable» и «master»
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+пример наименования: feature/new_button, bug/button_not_clickable, stable/ver_12.12.24
 
 
-Чтобы запустить проект:
+## Посмотреть макет можно тут:
+https://www.figma.com/file/5r4Cvxg6drgHZqI5uxS54c/StopREC?type=design&node-id=1434%3A7362&mode=design&t=rH3tO1NhxuhYSoff-1
+
+
+
+## Запустить проект
 - npm run dev 
+
+## сборка
+- npm run build
+

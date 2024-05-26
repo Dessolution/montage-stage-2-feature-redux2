@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react';
 import './ProfileSettingsPage.css';
 import Button from '../../components/Button/Button';
-import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { AppRoute } from '../../utils/const';
 import InnerNavLink from '../../components/InnerNavLink/InnerNavLink';
 
 const ProfileSettingsPage: React.FC = () => {
     const navigate = useNavigate();
-    const {pathname} =useLocation();
 
     useEffect(() => {
-        if (pathname === AppRoute.Profile){
-            navigate(AppRoute.PersonalData)
-
-        }
+        navigate(AppRoute.PersonalData)
     }, [])
     return (
         <div>
@@ -35,7 +31,6 @@ const ProfileSettingsPage: React.FC = () => {
                 </div>
                 <Outlet />
                 <div className='Confirms'>
-                    
                     <Button as="button" type='button' className='Cancel'> Отменить </Button>
                     <Button as="button" type='button' className='Confirm'>  Сохранить </Button>
                 </div>

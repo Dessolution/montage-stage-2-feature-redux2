@@ -65,34 +65,3 @@ font-family: montserratRegular;
     background-color: #FF4C4B;
     color: #fff;
 }
-
-.Create__order{
-    width: 181px;
-    background-color: #FF4C4B;
-    color: #fff;
-    height: 40px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: montserratRegular;
-    margin-left: 24px;
-}
-
-.Btn__continue{
-    width: 140px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: #FF4C4B;
-    color: #fff;
-    font-size: 16px;
-    float: right;
-    font-family: montserratRegular;
-}
-
-.Btn__back{
-    background-color: transparent;
-    width: 81px;
-    height: 24px;
-    font-size: 16px;
-    font-family: montserratBold;
-    color: #FF4C4B;
-}

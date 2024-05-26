@@ -1,19 +1,9 @@
 import './input.css'
-import React, { FC } from 'react'
-import PasswordSwitch from '../../assets/images/PasswordSwitch';
 
-interface InputProps {
-    placeholderText?: string;
-    className?: string;
-    children?: React.ReactNode | string;
-    type?: string;
-    id?: string | number;
-}
-
-const Input: FC<InputProps> = ({ placeholderText, className, children, type }) => {
+const Input: React.FC = () => {
     return (
-        <input required className={className} placeholder={placeholderText} type={type}>{children}</input>
+        <input className='Input' type='text'></input>
     )
 }
 
-export default Input;
+export default Input

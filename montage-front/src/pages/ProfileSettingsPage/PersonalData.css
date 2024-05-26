@@ -3,7 +3,6 @@
     position: relative;
     bottom: 1px;
     right: 1px;
-    margin-top: 60px;
 }
 .aboutMe__title {
     font-size: 24px;
@@ -61,7 +60,10 @@
 }
 
 .uploadPhoto {
-    height: 95px;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-between;
 }
 
 .content {
@@ -86,170 +88,4 @@ background-color: #F4F4F4;
 
 .content__btn:hover {
     color: #FF4C4B;
-}
-
-.messengers {
-    height: 112px;
-}
-
-.links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    width: 520px;
-    height: 112px;
-}
-
-.links__vk {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.links__viber {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.links__watsapp {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-.links__tg {
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-.aboutInfo {
-height: 172px;
-}
-
-.link {
-    width: 252px;
-    height: 48px;
-    border-radius: 8px;
-    background-color: #FFF;
-    font-family: montserratRegular;
-    line-height: 24px;
-    font-weight: 600;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-}
-.inputArea {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 520px;
-}
-
-.inputArea__inputUnderText {
-    text-align: start;
-    font-size: 12px;
-    line-height: 16px;
-}
-
-  
-.PasswordChange__inputs {
-    display: flex;
-    flex-direction: column;
-    width: 520px;
-  }
-
-.passwordChange {
-    height: 112px;
-    
-}
-
-.aboutCompany__title {
-    font-size: 24px;
-    font-family: montserratBold;
-    line-height: 32px;
-    margin-top: 130px;
-}
-
-.mainProject__content {
-    width: 520px;
-    height: 80px;
-    border-radius: 8px;
-    font-family: montserratSemiBold;
-    text-align: center;
-    background-color: #fff;
-}
-
-.mainProject__card {
-    display: flex;
-    flex-direction: column;
-gap: 18px;
-height: fit-content;
-}
-
-.mainProject__otherProjects {
-    align-self: flex-end;
-    font-family: montserratRegular;
-    font-size: 12px;
-    line-height: 16px;
-    background-color: #F4F4F4;
-    display: flex;
-    gap: 6px;
-    color: #FF4C4B;
-}
-
-.Input__container{
-    display: flex;
-    width: 51%; 
-    justify-content: flex-end;
-}
-
-textarea {
-    resize: none;
-    width: 100%;
-    height: 48px;
-    padding: 4px 8px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: montserratRegular;
-    line-height: 24px;
-    font-size: 16px;
-    width: 100%;
-    height: 100%;
-}
-
-.companySite__input{
-    height: 48px;
-    padding: 4px 8px;
-    border-radius: 0px 8px 8px 0px;
-    font-size: 16px;
-    font-family: montserratRegular;
-    line-height: 24px;
-    font-size: 16px;
-    width: 100%;
-}
-
-.companySite__container{
-    display: flex;
-    width: 51%; 
-    justify-content: flex-end;
-}
-
-.companySite__container::before {
-content: 'https://';
-font-family: montserratRegular;
-font-size: 16px;
-line-height: 24px;
-text-align: center;
-padding-top: 14px;
-color: rgba(202, 202, 202, 1);
-background-color: #fff;
-width: 90px;
-height: 48px;
-border-right: 2px solid #F4F4F4;
-border-radius: 8px 0px 0px 8px;
-display: inline;
-}
-
-.PasswordChange__SwitchBtn {
-    position: relative;
-    background-color: #fff;
-    bottom: 32px;
-    left: 489px;
 }
