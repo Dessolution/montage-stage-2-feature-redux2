@@ -5,12 +5,12 @@ interface InnerNavLinkProps {
     children: React.ReactNode;
 }
 
-const InnerNavLink: React.FC<InnerNavLinkProps> = ({ children }) => {
+const InnerNavLinkNav: React.FC<InnerNavLinkProps> = ({ children }) => {
     return (
-        <div className='InnerNav__Box'>
+        <div>
             <div className="InnerNavLink">{children}</div>
         </div>
     );
 };
 
-export default InnerNavLink;
+export default InnerNavLinkNav;

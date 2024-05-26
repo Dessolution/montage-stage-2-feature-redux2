@@ -21,9 +21,7 @@ const MyProjectsPage: React.FC = () => {
                 <NavLink to={AppRoute.ProjectsStats}>
                     <InnerNavLink>Статистика</InnerNavLink>
                 </NavLink>
-                
             </div>
-
             <Outlet />
         </div>
     )

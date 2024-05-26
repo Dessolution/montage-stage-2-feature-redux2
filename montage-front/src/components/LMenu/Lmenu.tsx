@@ -1,19 +1,17 @@
 import { Link, useLocation } from 'react-router-dom'
 import cn from "classnames";
+import Feature from '../../assets/images/Feature'
 import Button from '../Button/Button'
 import './Lmenu.css'
 import { AppRoute } from '../../utils/const'
 import { getButtonClassName } from '../../utils/getButtonClassName';
-import Feature from '../../assets/images/Feature';
 
 
 const Lmenu: React.FC = () => {
   const { pathname } = useLocation();
 
   return (
-    
     <div className="Lmenu">
-     
       <div className='Main_buttons'>
         <Link to={AppRoute.OrdersCurrent}>
           <Button
