@@ -1,0 +1,23 @@
+.InnerNavLink {
+    cursor: pointer;
+    line-height: 24px;
+  }
+.active::after {
+    content: '';
+    display: flex;
+    width: content;
+    position: relative;
+    top: 3px;
+    flex-direction: column-reverse;
+    flex-shrink: 30px;
+    height: 2px;
+    background-color: #FF4C4B;
+    border-radius: 1px;
+    color: #121212;
+  }
+  .active{
+    color: #121212;
+  }
+  a{
+    color: #928F8F;
+  }

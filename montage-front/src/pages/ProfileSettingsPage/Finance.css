@@ -1,0 +1,99 @@
+.Finance{
+    margin-top: 56px;
+}
+
+.Finance__title{
+    font-size: 24px;
+    width: 123px;
+    height: 32px;
+    font-family: montserratBold;
+}
+
+.Cards{
+    display: flex;
+    margin-top: 32px;
+}
+
+.Extract__card, .Finance__card{
+    width: 375px;
+    height: 239px;
+    border-radius: 24px;
+}
+
+.Finance__card{
+    background:  linear-gradient(to bottom right, #FF4C4B, #FFAC4B);
+}
+
+.Extract__card{
+    background-color: #fff;
+    margin-left: 16px;
+}
+
+.Card__sum{
+    height: 40px;
+    color: #fff;
+   /* margin: 24px 0px 0px 24px;*/
+
+}
+
+.Head__sum{
+    display: flex;
+    height: 40px;
+    
+}
+
+.Sum__total{
+    width: 152px;
+    font-size: 32px;
+    font-family: montserratRegular;
+    margin-left: 24px;
+    margin-top: 24px;
+    
+}
+
+.Subtitle__sum{
+    height: 16px;
+    font-size: 12px;
+    font-family: montserratLight;
+    line-height: 16px;
+    margin-left: 24px;
+    margin-top: 24px;
+}
+
+.MoneyCard__icon, .Bank__icon{
+    width: 56px;
+    height: 56px;
+    margin: 16px 16px 167px 127px;
+}
+
+.Extract__text{
+    width: 184px;
+    height: 48px;
+    font-size: 16px;
+    margin: 24px 0px 0 24px;
+    font-family: montserratBold;
+    line-height: 24px;
+}
+
+.Format__type{
+    width: 328px;
+    height: 42px;
+    display: flex;
+    font-family: montserratSemiBold;
+    font-size: 16px;
+    align-items: center;
+    margin:  112px 0px 0px 24px;
+    justify-content: space-between;
+}
+
+.Format__field{
+    width: 104px;
+    border-radius: 8px;
+    border: 1px solid #EFEFEF;
+
+}
+
+.Format__field:hover{
+    background-color: #FCE1E3;
+}
+

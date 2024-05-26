@@ -1,0 +1,48 @@
+.FilterPanel{
+    width: 1550px;
+    height: 40px;
+    display: flex;
+    font-size: 16px;
+    font-family: montserratBold;
+    background-color: #fff;
+    align-items: center;
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+.Project_name, .Project__type, .Project__quantity, .Date__added, .Status, .Action{
+    margin-left: 24px;
+    padding: 8px;
+    text-align: left;
+}
+
+.Project__id{
+    width: 68px;
+    
+    margin-left: 16px;
+}
+
+.Project_name{
+    width: 233px;  
+}
+
+.Project__type{
+    width: 256px;
+}
+
+.Project__quantity{
+    width: 199px;
+}
+
+.Date__added{
+    width: 231px;
+}
+
+.Status{
+    width: 192px;
+}
+
+.Action{
+    width: 116px;
+    margin-right: 95px;
+}

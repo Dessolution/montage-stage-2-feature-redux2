@@ -1,0 +1,31 @@
+.MyOrders {
+    margin-top: 150px;
+    margin: 72px 0px 0px 0px;
+    background-color: #F4F4F4;
+    padding: 40px 0 0 34px;
+}
+
+.MyOrders__title{
+    font-family: montserratRegular;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    height: 32px;
+    font-size: 24px;
+    color: #121212;
+    line-height: 32px;
+    margin-bottom: 74px;
+}
+
+.MyOrders__nav{
+    display: inline-block;
+    font-family: montserratSemiBold;
+    max-width: 338px;
+    gap: 16px;
+    margin-left: 1px;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}

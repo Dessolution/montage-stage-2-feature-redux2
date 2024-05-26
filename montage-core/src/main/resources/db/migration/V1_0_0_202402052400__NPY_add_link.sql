@@ -1,0 +1,1 @@
+alter table order_info add column if not exists link_result varchar;

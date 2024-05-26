@@ -1,0 +1,50 @@
+
+.Orders__field__title, .Finance__projects__title{
+    font-family: montserratBold;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    width: 460px;
+    height: 24px;
+    font-size: 20px;
+    color: #121212;
+    line-height: 32px;
+
+}
+
+.Finance__projects__title{
+    margin-top: 49px;
+}
+
+.Orders__field__title{
+    margin-top: 81px;
+}
+
+.Finance__body{
+    display: flex;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.Card1, .Card2, .Card3, .Card4{
+    
+    width: 506px;
+    height: 148px;
+    background-color: #fff;
+    border-radius: 16px;
+}
+.Card2, .Card3{
+    margin-left: 16px;
+}
+
+.Card4{
+    margin-top: 16px;
+}
+
+.Card__text{
+    width: 196px;
+    height: 24px;
+    font-size: 16px;
+    font-family: montserratMedium;
+    line-height: 24px;
+    margin: 24px 0px 0px 24px;
+}

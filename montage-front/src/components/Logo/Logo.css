@@ -1,0 +1,10 @@
+.Logotype{
+    width: 160px;
+    height: 38px;
+    margin: 17px 73px 0px 72px;
+
+}
+
+.Logotype:hover{
+    cursor: pointer;
+}

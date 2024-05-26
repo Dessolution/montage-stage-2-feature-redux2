@@ -1,0 +1,645 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/admin.css">
+    <title>Личный кабинет</title>
+</head>
+<header >
+</header>
+<body>
+
+<!--Прелоадер-->
+<div class="mask">
+    <div class="loader">
+    </div>
+</div>
+
+<div class="admin-menu">
+
+
+
+    <div class="header">
+        <div class="header-menu">
+            <input type="checkbox" id="nav-toggle" hidden>
+            <nav class="nav">  <!--Панель списка-->
+
+                <label for="nav-toggle" class="nav-toggle"></label>
+
+                <div class="logotype">
+                    <img src="/static/img/logo.png" alt="">
+                </div>
+                <ul>
+                    <li><a href="#1" onclick="openprofile()">Профиль</a>
+
+                    <li><a href="#2" onclick="showbids()">Заявки</a>
+                    <li><a id="default-open" href="#3" onclick="showorders()">Заказы</a>
+                    <li><a href="#4" onclick="showcoworkers()">Сотрудники</a>
+                    <li><a href="#7" onclick="showclients()">Клиенты</a>
+                    <li><a href="#5" onclick="showorderstat()">Всего заказов</a>
+                    <li><a href="#6" onclick="showspecstat()">По специалистам</a>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content">
+            <button  class="btn-logout" id="exit-btn" onclick="document.location='./logout'" >Выйти</button>
+
+        </div>
+    </div>
+
+
+    <div class="profile"  id="admin-profile">
+        <div class="profile-info" id="head-info">
+
+            <label for="admin-surname" class="user-info" id="admin-surname">Кошкин</label>
+            <label for="admin-name" class="user-info" id="admin-name">Виктор</label>
+        </div>
+
+        <div class="profile-info" id="status">
+            <label for="customer" class="user-info" id="customer" >Администратор</label>
+
+        </div>
+        <div class="profile-info">
+            <label for="admin-info1" class="user-info" id="admin-info1">Почта:</label>
+            <label for="admin-content1" class="user-info" id="admin-content1">Koshak@mail.ru</label>
+        </div>
+        <div class="profile-info">
+            <label for="admin-info2" class="user-info" id="admin-info2">Пароль:</label>
+            <label for="admin-content2" class="user-info" id="admin-content2">F3234f</label>
+        </div>
+        <div class="profile-info">
+            <label for="admin-info3" class="user-info" id="admin-info3">Телеграм:</label>
+            <label for="admin-content3" class="user-info" id="admin-content3">@koshkavi</label>
+        </div>
+        <div class="profile-info">
+            <label for="admin-info4" class="user-info" id="admin-info4" >Телефон:</label>
+            <label for="admin-content4" class="user-info" id="admin-content4">+79055675465</label>
+        </div>
+        <div class="profile-info">
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="orders" id="orders">
+
+        <div class="filter">
+            <button onclick="myDropdown()" class="drop-btn" id="filter-btn">Сортировка</button>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropdown-content" id="myDropdown">
+                <div class="dropdown-filter1" id="dropdown-worker-filter">
+                    <label for="worker-filter" class="filter-label">По исполнителю:</label>
+                    <select class="form-styling" name="" id="worker-filter">
+                        <option  value="" selected>Не выбрано</option>
+                    </select>
+                </div>
+                <div class="dropdown-filter1">
+                    <label for="status-filter" class="filter-label">По статусу:</label>
+                    <select class="form-styling" name="" id="status-filter">
+                        <option value="" selected>Не выбрано</option>
+                        <option value="NEW">Новый</option>
+                        <option value="BOOKED">Забронирован</option>
+                        <option value="WORK">В работе</option>
+                        <option value="COMPLETED">Завершен исполнителем</option>
+                        <option value="ACCEPTED">Принят заказчиком</option>
+                        <option value="CANCELLATION">Отказ</option>
+                    </select>
+                </div>
+                <div class="dropdown-filter1">
+                    <label for="cash-filter" class="filter-label">По оплате:</label>
+                    <select class="form-styling" name="" id="cash-filter">
+                        <option value="" selected>Не выбрано</option>
+                        <option value="WAITING">Ожидает оплаты</option>
+                        <option value="PREPAYMENT">Внесена предоплата</option>
+                        <option value="EXTRAPAYMENT">Внесена доплата</option>
+                        <option value="FULL">Оплачен</option>
+                    </select>
+                </div>
+                <div class="dropdown-filter1">
+                    <label for="deadline" class="filter-label">По дедлайну:</label>
+                    <input class="form-styling" type="date" name="deadline" id="deadline"/>
+                </div>
+
+                <div class="dropdown-filter2">
+                    <button onclick="getOrders()" class="approve" id="search-btn">Поиск</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+<div class="bids" id="bids">
+    <div class="container" id="bid1">
+        <div class="bid-box">
+            <div class="bid-info-head">
+                <div class="bid-name">
+                    <h3 >Заявка №345</h3>
+                </div>
+                <div class="bid-info2">
+                    <label class="price" >А. Машков</label>
+                </div>
+            </div>
+
+            <div class="section-item item">
+
+                <div class="bid-info-neck">
+                    <div class="bid-name" id="bid-border1">
+                        <label >Монтажер</label>
+                    </div>
+
+                    <div class="bid-info3">
+                        <button class="item-button" onclick="changeText(this)">Подробнее</button>
+                    </div>
+                </div>
+
+                <div class="item-content"> <!-- этот элемент будет плавно менять высоту -->
+                    <div class="item-body">
+                        <div class="bid-info" id="bid-info">
+                            <label  class="performer-surname" >Машков</label>
+                            <label  class="performer-name" >Александр</label>
+                        </div>
+
+                    </div>
+
+                    <div class="item-body">
+                        <div class="order-info">
+                            <label for="worker-surname" class="status-main" >На рассмотрении</label>
+                        </div>
+                    </div>
+
+                    <div class="bid-info-main">
+                        <div class="bid-list">
+                            <div class="bid-name">
+                                <label class="performer-info" >Телеграм:</label>
+                            </div>
+                            <div class="bid-info2">
+                                <label class="performer-info">@Kustarni</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bid-info-main">
+
+                        <div class="bid-list">
+                            <div class="bid-name">
+                                <label class="performer-info">Email:</label>
+                            </div>
+
+                            <div class="bid-info2">
+                                <label class="performer-info">Kustarni@mail.ru</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bid-info-main">
+
+                        <div class="bid-list">
+                            <div class="bid-name">
+                                <label class="performer-info">Портфолио:</label>
+                            </div>
+
+                            <div class="bid-info2">
+                                <label class="performer-info">Стаж 3 года, работал в 4 компаниях</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="bid-info-footer">
+
+                        <div class="footer-btns">
+                            <button  class="deny"  type="submit" onclick="document.location='#modal2'" >Отклонить</button>
+                            <button  class="approve"  type="submit" onclick="document.location='#modal2'" >Принять</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="coworkers" id="coworkers">
+    <div class="container" id="coworker1">
+        <div class="bid-box">
+            <div class="bid-info-head">
+                <div class="bid-name">
+                    <h3 >Максим</h3>
+                </div>
+                <div class="bid-info2">
+                    <label class="coworker-status" >Свободен</label>
+                </div>
+            </div>
+
+            <div class="section-item item">
+
+                <div class="bid-info-neck">
+                    <div class="bid-name" id="coworker-border1">
+                        <label >Монтажер</label>
+                    </div>
+
+                    <div class="bid-info3">
+                        <button class="item-button" onclick="changeText2(this)">Профиль</button>
+                    </div>
+                </div>
+
+                <div class="item-content"> <!-- этот элемент будет плавно менять высоту -->
+                    <div class="item-body">
+                        <div class="bid-info" id="coworker-info">
+                            <label  class="performer-surname" >Миксин</label>
+                            <label  class="performer-name" >Максим</label>
+                        </div>
+
+
+                        <div class="bid-info-main">
+
+                            <div class="bid-list">
+                                <div class="bid-name">
+                                    <label class="performer-info" >Телеграм:</label>
+                                </div>
+
+                                <div class="bid-info2">
+                                    <label class="performer-info">@Kustarni</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="bid-info-main">
+
+                            <div class="bid-list">
+                                <div class="bid-name">
+                                    <label class="performer-info">Email:</label>
+                                </div>
+
+                                <div class="bid-info2">
+                                    <label class="performer-info">Kustarni@mail.ru</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="bid-info-main">
+
+                            <div class="bid-list">
+                                <div class="bid-name">
+                                    <label class="performer-info">Портфолио:</label>
+                                </div>
+
+                                <div class="bid-info2">
+                                    <label class="performer-info">Стаж 3 года, работал в 4 компаниях</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="bid-info-footer">
+
+                            <div class="footer-btns">
+                                <button  class="deny"  type="submit" onclick="document.location='#modal2'" >Отклонить</button>
+                                <button  class="approve"  type="submit" onclick="document.location='#modal2'" >Принять</button>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="coworkers" id="clients">
+    <div class="container" id="client1">
+        <div class="bid-box">
+            <div class="bid-info-head">
+                <div class="bid-name">
+                    <h3 >Максим</h3>
+                </div>
+                <div class="bid-info2">
+                    <label class="coworker-status" >Свободен</label>
+                </div>
+            </div>
+
+            <div class="section-item item">
+
+                <div class="bid-info-neck">
+                    <div class="bid-name" id="coworker-border1">
+                        <label >Монтажер</label>
+                    </div>
+
+                    <div class="bid-info3">
+                        <button class="item-button" onclick="changeText2(this)">Профиль</button>
+                    </div>
+                </div>
+
+                <div class="item-content"> <!-- этот элемент будет плавно менять высоту -->
+                    <div class="item-body">
+                        <div class="bid-info" id="client-info">
+                            <label  class="performer-surname" >Миксин</label>
+                            <label  class="performer-name" >Максим</label>
+                        </div>
+
+
+                        <div class="bid-info-main">
+
+                            <div class="bid-list">
+                                <div class="bid-name">
+                                    <label class="performer-info" >Телеграм:</label>
+                                </div>
+
+                                <div class="bid-info2">
+                                    <label class="performer-info">@Kustarni</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="bid-info-main">
+
+                            <div class="bid-list">
+                                <div class="bid-name">
+                                    <label class="performer-info">Email:</label>
+                                </div>
+
+                                <div class="bid-info2">
+                                    <label class="performer-info">Kustarni@mail.ru</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="bid-info-main">
+
+                            <div class="bid-list">
+                                <div class="bid-name">
+                                    <label class="performer-info">Портфолио:</label>
+                                </div>
+
+                                <div class="bid-info2">
+                                    <label class="performer-info">Стаж 3 года, работал в 4 компаниях</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="bid-info-footer">
+
+                            <div class="footer-btns">
+                                <button  class="deny"  type="submit" onclick="document.location='#modal2'" >Отклонить</button>
+                                <button  class="approve"  type="submit" onclick="document.location='#modal2'" >Принять</button>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="order-stat"  id="order-stat">
+
+    <div class="full-orders">
+        <label for="full-info1" class="stat-info" id="full-info1">Всего Заказов:</label>
+        <label for="all-orders" class="stat-content" id="all-orders">50</label>
+    </div>
+    <div class="full-orders">
+        <label for="full-info2" class="stat-info" id="full-info2">В статусе "Новый":</label>
+        <label for="new-orders" class="stat-content" id="new-orders">2</label>
+    </div>
+    <div class="full-orders">
+        <label for="full-info3" class="stat-info" id="full-info3">В статусе "В работе":</label>
+        <label for="in-process" class="stat-content" id="in-process">4</label>
+    </div>
+    <div class="full-orders">
+        <label for="full-info4" class="stat-info" id="full-info4" >В статусе "Завершен Исполнителем":</label>
+        <label for="completed" class="stat-content" id="completed">6</label>
+    </div>
+    <div class="full-orders">
+        <label for="full-info5" class="stat-info" id="full-info5" >В статусе "Принят Заказчиком":</label>
+        <label for="accepted" class="stat-content" id="accepted">12</label>
+    </div>
+    <div class="full-orders">
+        <label for="full-info6" class="stat-info" id="full-info6" >В статусе "Отказ":</label>
+        <label for="refusal" class="stat-content" id="refusal">6</label>
+    </div>
+    <div class="full-orders" id="footer-all">
+
+    </div>
+
+
+
+    </div>
+
+    <div class="spec-stat"  id="spec-stat">
+
+     <div class="full-spec">
+        <table class="table-spec">
+            <caption class="name-cols">На текущий момент по специалистам</caption>
+            <thead>
+            <tr>
+                <th colspan="4" class="first-col">Cтатус свободен у спеца появляется когда его заказ перешел в студию "Принят заказчиком"</th>
+                <th colspan="3"  class="second-col">Заработал себе</th>
+                <th colspan="3" class="third-col">Заработал для платформы</th>
+            </tr>
+            <tr>
+                <th class="help-col" id="spec">Специалист</th>
+                <th class="help-col" id="active-status">Текущий статус</th>
+                <th class="help-col" id="all-complete">Всего сделано</th>
+                <th class="help-col" id="grade">Оценка (средняя по заказам)</th>
+                <th class="help-col" id="rub-spec">RUB</th>
+                <th class="help-col" id="usd-spec">USD</th>
+                <th class="help-col" id="az-spec">AZ</th>
+                <th class="help-col" id="rub-platform">RUB</th>
+                <th class="help-col" id="usd-platform">USD</th>
+                <th class="help-col" id="az-platform">AZ</th>
+            </tr>
+            </thead>
+            <tbody id="stat-spec-tbody">
+            <tr>
+                <td class="help-col">Алексей</td>
+                <td class="help-col">В работе</td>
+                <td class="help-col">2</td>
+                <td class="help-col">3/5</td>
+                <td class="help-col">2500</td>
+                <td class="help-col">-</td>
+                <td class="help-col">-</td>
+                <td class="help-col">2000</td>
+                <td class="help-col">-</td>
+                <td class="help-col">-</td>
+            </tr>
+            </tbody>
+        </table>
+         <div class="full-orders" id="footer-all">
+
+         </div>
+
+
+    </div>
+</div>
+
+<div class="modal-box" id="modal2">
+    <div class="modal-table"></div>
+    <div class="modal-cell"></div>
+
+    <div class="modal-window2 cyan">
+        <!--Прелоадер-->
+        <div class="mask2">
+            <div class="loader2">
+            </div>
+        </div>
+        <div class="order-menu2">
+            <h3>Вы уверены?</h3>
+        </div>
+        <div class="order-body">
+        </div>
+        <div class="confirm">
+            <div class="confirm-btn">
+                <button  class="btn-logout" id="cancel-btn" onclick="document.location='#close'">Нет</button>
+                <button  class="btn-logout" id="confirm-btn" type="submit" onclick="approveBid('3')" >Да</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal-box" id="modal">
+    <div class="modal-table">
+        <div class="modal-cell">
+            <div class="modal-window cyan">
+                <h2>Редактирование заказа</h2>
+                <div class="order-menu">
+                    <div class="order-correct" id="block1">
+                        <label >Cумма заказа:</label>
+                        <input class="form-styling" type="text" id="order-price" placeholder="Укажите сумму" required/>
+
+                        <label >Cумма исполнителю:</label>
+                        <input class="form-styling" type="text" id="worker-price" placeholder="Укажите сумму" required/>
+
+                        <label >Cтатус оплаты:</label>
+                        <select class="form-styling" name="" id="payment-status">
+                            <option value="NONE" selected>Не указан</option>
+                            <option value="WAITING">ОЖИДАЕМ ОПЛАТУ</option>
+                            <option value="PREPAYMENT">ВНЕСЕНА ПРЕДОПЛАТА</option>
+                            <option value="EXTRAPAYMENT">ВНЕСЕНА ДОПЛАТА</option>
+                            <option value="FULL">ПОЛНАЯ ОПЛАТА</option>
+                        </select>
+
+                        <label >Cтатус заказа:</label>
+                        <select class="form-styling" name="" id="order-status">
+                            <option value="NONE" selected>Не указан</option>
+                            <option value="CANCELLATION">ОТКАЗ</option>
+                            <option value="ACCEPT">ПРИНЯТЬ ЗАКАЗ (заказчик не выходит на связь)</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="confirm">
+                    <div class="confirm-btn" id="confirm-btn-block">
+                        <button  class="btn-logout" id="cancel-btn2" onclick="closePayment()" >Отмена</button>
+                        <button className="btn-logout" id="payment-confirm-btn"
+                                type="submit"
+                                onClick="">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal-box" id="modal3">
+    <div class="modal-table">
+        <div class="modal-cell">
+            <div class="modal-window cyan">
+                <h2>Профиль Заказчика</h2>
+                <div class="order-menu">
+                    <div class="profile-info" >
+                        <label for="client-surname" class="user-info" id="client-surname">Никонова</label>
+                        <label for="client-name" class="user-info" id="client-name">София</label>
+                    </div>
+
+
+                    <div class="profile-info">
+                        <label for="client-info1" class="user-info" id="client-info1">Почта:</label>
+                        <label for="client-content1" class="user-info" id="client-content1">Max@mail.ru</label>
+                    </div>
+
+                    <div class="profile-info">
+                        <label for="client-info2" class="user-info" id="client-info2">Телеграм:</label>
+                        <label for="client-content2" class="user-info" id="client-content2">@maxivanof</label>
+                    </div>
+                </div>
+
+                <div class="confirm">
+                    <div class="confirm-btn">
+                        <button  class="btn-logout" id="cancel-btn3" onclick="document.location='#close'" >Закрыть</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-box" id="modal4">
+    <div class="modal-table">
+        <div class="modal-cell">
+            <div class="modal-window cyan">
+                <h2>Профиль Исполнителя</h2>
+                <div class="order-menu">
+                    <div class="profile-info" >
+                        <label for="worker-surname" class="user-info" id="worker-surname"></label>
+                        <label for="worker-name" class="user-info" id="worker-name"></label>
+                    </div>
+
+                    <div class="profile-info">
+                        <label  class="worker-info" id="worker-info1" >Почта:</label>
+                        <label  class="worker-info" id="worker-content1"></label>
+                    </div>
+
+                    <div class="profile-info">
+                        <label  class="worker-info" id="worker-info2">Телеграм:</label>
+                        <label  class="worker-info" id="worker-content2"></label>
+                    </div>
+                </div>
+
+                <div class="confirm">
+                    <div class="confirm-btn">
+                        <button  class="btn-logout" id="cancel-btn4" onclick="document.location='#close'" >Закрыть</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+<script src="/static/js/admin.js"></script>
+</html>

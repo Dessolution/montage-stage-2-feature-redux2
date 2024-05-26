@@ -1,0 +1,171 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/worker.css">
+
+    <title>Личный кабинет</title>
+
+</head>
+<header>
+
+</header>
+<body>
+<!--Прелоадер-->
+<div class="mask">
+    <div class="loader">
+    </div>
+</div>
+
+<div class="client-menu">
+
+
+    <div class="header">
+        <div class="header-menu">
+            <input type="checkbox" id="nav-toggle" hidden>
+            <nav class="nav">  <!--Панель списка-->
+
+                <label for="nav-toggle" class="nav-toggle"></label>
+
+                <div class="logotype">
+                    <img src="/static/img/logo.png" alt="">
+                </div>
+                <ul>
+                    <li><a href="#1" onclick="openprofile()">Профиль</a>
+
+                    <li><a id="default-open" href="#2" onclick="showorders()">Заказы в работе</a>
+                    <li><a href="#3" onclick="freeorders()">Доступные заказы</a>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content">
+            <button class="btn-logout" id="exit-btn" onclick="document.location='./logout'">Выйти</button>
+
+        </div>
+    </div>
+    <div class="new-order">
+
+
+    </div>
+
+    <div class="profile" id="worker-profile">
+        <form id="profile-form">
+                <div class="profile-info">
+                    <label for="worker-surname" class="user-info" id="worker-surname-lab">Фамилия:</label>
+                    <input required readonly type="text" for="worker-surname" class="user-info" id="worker-surname"></input>
+                </div>
+                <div class="profile-info">
+                    <label for="worker-name" class="user-info" id="worker-name-lan">Имя:</label>
+                    <input required readonly type="text" for="worker-name" class="user-info" id="worker-name"></input>
+                </div>
+            <div class="profile-info" id="status">
+                <label class="user-info" id="role-model">Исполнитель</label>
+            </div>
+        <div class="profile-info">
+            <label for="worker-info1" class="user-info" id="worker-info1">Почта:</label>
+            <input required readonly type="email" for="worker-content1" class="user-info" id="worker-content1"></input>
+        </div>
+        <div class="profile-info">
+            <label for="worker-info2" class="user-info" id="worker-info2">Пароль:</label>
+            <input required readonly type="password" for="worker-content2" class="user-info" id="worker-content2"></input>
+        </div>
+        <div class="profile-info">
+            <label for="worker-info3" class="user-info" id="worker-info3">Телефон:</label>
+            <input required readonly type="tel" for="worker-content3" class="user-info" id="worker-content3"></input>
+        </div>
+        <div class="profile-info">
+            <label for="worker-info4" class="user-info" id="worker-info4">Специальность:</label>
+            <select name="role" id="worker-content4">
+                <option selected value="">Монтажер</option>
+            </select>
+        </div>
+        <div class="profile-info">
+            <label for="worker-info5" class="user-info" id="worker-info5">Языки:</label>
+            <select name="languages" class="user-info" id="worker-content5">
+                <option selected value="RUSSIAN">Русский</option>
+                <option value="ENGLISH">Английский</option>
+                <option value="AZER">Азербайджанский</option>
+            </select>
+
+        </div>
+        <div class="profile-info">
+            <label for="worker-info6" class="user-info" id="worker-info6">Прием оплаты:</label>
+            <select aria-readonly="true" name="cash" class="user-info" id="worker-content6">
+                <option selected value="TRANSFER">Карта</option>
+            </select>
+
+        </div>
+        <div class="profile-info">
+            <label for="worker-info7" class="user-info" id="worker-info7">Портфолио:</label>
+            <input readonly type="text" for="worker-content7" class="user-info" id="worker-content7"></input>
+
+        </div>
+        <div class="profile-info">
+            <button class="btn-edit" id="edit-profile-btn" onclick="profileEditable()">Редактировать</button>
+            <button type="button" class="btn-edit" hidden id="save-profile-btn" onclick="saveProfile()">Сохранить</button>
+        </div>
+        </form>
+        <div class="profile-close">
+
+        </div>
+    </div>
+
+
+    <div class="orders" id="orders">
+
+    </div>
+</div>
+
+
+<div class="orders" id="free-orders">
+
+</div>
+
+
+<div class="modal-box" id="modal2">
+    <div class="modal-table">
+
+    </div>
+    <div class="modal-cell">
+
+    </div>
+    <div class="modal-window2 cyan">
+        <!--Прелоадер-->
+
+        <div class="mask2">
+            <div class="loader2">
+            </div>
+        </div>
+        <div class="confirm" id="confirm-block">
+            <div class="confirm-btn">
+
+                <button class="btn-logout" id="cancel" onclick="document.location='#close'">Закрыть</button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal-box" id="modal6">
+    <div class="modal-table">
+
+    </div>
+    <div class="modal-cell">
+
+    </div>
+    <div class="modal-window2 cyan">
+        <!--Прелоадер-->
+        <div class="order-info" id="link-result-input"></div>
+
+        <div class="confirm" id="confirm-block-finish">
+            <div class="confirm-btn" id="confirm-btn-div"></div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+<script src="/static/js/worker.js"></script>
+</html>

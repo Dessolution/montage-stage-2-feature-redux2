@@ -1,0 +1,189 @@
+.Choose__task{
+    display: flex;
+    flex-direction: column;
+    max-width: 460px;
+    font-family: montserratRegular;
+    margin: 0 auto;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.Order__container{
+    width: 460px;
+    margin: 295px 0px 0px 564px;
+}
+
+.NewOrder_body {
+    background-color: #F4F4F4;
+    height: 100%;
+    padding-top: 1px;
+}
+
+.task_field {
+    background-color: #FFFFFF;
+    height: 56px;
+    border-radius: 8px;
+    font-family: montserratSemiBold;
+}
+
+
+.Header__newOrder {
+    width: 460px;
+    font-size: 24px;
+    font-family: montserratBold;
+    line-height: 32px;
+    text-align: center;
+
+}
+
+.checkbox {
+    margin-bottom: 0.2em;
+}
+
+
+.task_field:hover{
+    background-color: #FCE1E3;
+}
+
+
+.recomendation {
+    text-align: center;
+    padding: 15px 0 0 0;
+    margin-bottom: 17px;
+    font-family: montserratMedium;
+}
+
+.Link__accounts{
+    margin-top: 24px;
+    
+}
+.Acc__input, .Size__params{
+    margin-top: 16px;
+}
+.LinkAcc__text{
+    font-size: 16px;
+    font-family: montserratMedium;
+    height: 24px;
+}
+
+.No__accounts{
+    width: 233px;
+    height: 40px;
+    margin-top: 8px;
+}
+
+.Task__body{
+    width: 460px;
+    height: 928px;
+    margin-top: 16px;
+}
+
+.Description__task, .Link__reference, .Platform__reference{
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: montserratRegular;
+    color: #121212;
+}
+
+.Description__area{
+    height: 192px;
+}
+
+.Description__area, .Reference__input, .Size__area, .Date__picker{
+    margin-top: 16px;
+    
+}
+
+.Link__reference, .Platform__reference{
+    margin-top: 32px;
+}
+
+.Platform__container{
+    height: 352px;
+    width: 460px;
+
+}
+
+.Platform__checkboxes{
+    margin-top: 16px;
+    height: 312px;
+    
+}
+
+.Platform__fields, .Platform__footer{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 56px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    padding: 16px 0px 16px 16px;
+    margin-bottom: 8px;
+}
+
+.Platform__footer{
+    margin-bottom: 0;
+}
+
+.Size__area{
+    height: 112px;
+}
+
+.task__buttons{
+    margin-bottom: 95px;
+    margin-top: 24px;
+}
+
+.task__buttons__main, .task__buttons{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: space-between;
+}
+
+.task__buttons__main, .Specialist__container{
+    margin-top: 24px;
+}
+
+.Deadline__container{
+    margin-top: 24px;
+    height: 96px;
+}
+
+.Date__picker{
+    height: 56px;
+}
+
+.Exp__task{
+    height: 16px;
+    font-size: 12px;
+    font-family: montserratlight;
+    margin-top: 4px;
+}
+
+.PrBar_title {
+    font-family: montserratlight;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 7px;
+}
+
+.current {
+    font-family: montserratMedium;
+}
+
+.Order__progressBar {
+    display: flex;
+    min-width: 512px;
+    gap: 10px;
+    margin: -115px 0px 57px -26px;
+    justify-content: space-between;
+}
+
+.PrBar_step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}

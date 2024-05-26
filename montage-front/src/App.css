@@ -1,0 +1,10 @@
+@import './assets/fonts/config.css';
+
+.container{
+  display: flex;
+}
+
+.Body{
+  width: 1614px;
+  height: auto;
+}

@@ -1,0 +1,22 @@
+.Task__nav{
+    width: 460px;
+    height: 40px;
+    font-size: 16px;
+    font-family: montserratSemiBold;
+    line-height: 24px;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: nowrap;  
+    align-items: center;
+    margin-top: 24px;
+}
+
+.Write__task, .Load__task, .Link__task{
+    width: 153px;
+    height: 37px;
+    background-color: #ffffff;
+}
+
+.Write__task:hover, .Load__task:hover, .Link__task:hover{
+    background-color: #EFEFEF;
+}

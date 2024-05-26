@@ -1,0 +1,394 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/client.css">
+
+    <title>Личный кабинет</title>
+
+</head>
+<header>
+
+</header>
+<body>
+<!--Прелоадер-->
+<div class="mask">
+    <div class="loader">
+    </div>
+</div>
+
+<div class="client-menu">
+
+
+    <div class="header">
+        <div class="header-menu">
+            <input type="checkbox" id="nav-toggle" hidden>
+            <nav class="nav">  <!--Панель списка-->
+
+                <label for="nav-toggle" class="nav-toggle"></label>
+
+                <div class="logotype">
+                    <img src="/static/img/logo.png" alt="">
+                </div>
+                <ul>
+                    <li><a href="#1" onclick="openprofile()">Профиль</a>
+
+                    <li><a href="#2" onclick="showorders()">Мои заказы</a>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content">
+            <button class="btn-logout" id="exit-btn" onclick="document.location='./logout'">Выйти</button>
+
+        </div>
+    </div>
+    <div class="new-order">
+        <a href="#modal" class="btn" id="order-btn">Новый заказ</a>
+
+    </div>
+
+    <div class="profile" id="client-profile">
+        <form id="profile-form">
+        <div class="profile-info" id="head-info">
+            <div class="profile-info">
+                <label for="client-surname" class="user-info" id="client-info-surname">Фамилия:</label>
+                <input required readonly type="text" class="form-styling" id="client-surname"></input>
+            </div>
+            <div class="profile-info">
+                <label for="client-name" class="user-info" id="client-info-name">Имя:</label>
+                <input required readonly type="text" class="form-styling" id="client-name"></input>
+            </div>
+        </div>
+
+        <div class="profile-info" id="status">
+            <label for="customer" class="user-info" id="customer">Заказчик</label>
+
+        </div><div class="profile-info">
+            <label for="client-info1" class="user-info" id="client-info1">Почта:</label>
+            <input required readonly for="client-content1" type="text" class="form-styling" id="client-content1"></input>
+        </div>
+            <div class="profile-info">
+                <label for="client-info1" class="user-info" id="client-info2">Пароль:</label>
+                <input required readonly for="client-content1" type="password" class="form-styling" id="client-content2"></input>
+            </div>
+        <div class="profile-info">
+            <label for="client-info3" class="user-info" id="client-info3">Телеграм:</label>
+            <input required readonly type="text" for="client-content3" class="form-styling" id="client-content3"></label>
+        </div>
+        <div class="profile-info">
+            <label for="client-info4" class="user-info" id="client-info4">Youtube(Rutube, Dzen) канал:</label>
+            <input readonly type="text" for="client-content4" class="form-styling" id="client-content4"></input>
+        </div>
+        <div class="profile-info">
+            <label for="client-info5" class="user-info" id="client-info5">Информация о себе:</label>
+            <input type="text" for="client-content5" class="form-styling" id="client-content5"></input>
+
+        </div>
+            <div class="profile-info">
+                <button class="btn-edit" id="edit-profile-btn" onclick="profileEditable()">Редактировать</button>
+                <button type="button" hidden id="save-profile-btn" onclick="saveProfile()">Сохранить</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="modal-box" id="modal">
+        <div class="modal-table">
+            <div class="modal-cell">
+                <div class="modal-window cyan">
+
+
+                    <h2>Основные параметры монтажа</h2>
+
+                    <div class="order-menu">
+                        <form id="create-order-form">
+                            <div class="order-info" id="block1">
+
+                                <label for="name" id="name">Имя (Или ФИО)</label>
+
+                                <div class="inputs">
+                                    <div class="img">
+                                        <div class="picture">
+                                            <div class="prompt">
+                                                <p>Обязательное поле</p>
+                                            </div>
+                                        </div> <!--Картинка-->
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-styling" type="text" name="name" placeholder="" required/>
+
+                                    </div>
+                                </div>
+
+
+                                <label for="tel" id="tel">Телефон</label>
+
+                                <div class="inputs">
+                                    <div class="img">
+                                        <div class="picture">
+                                            <div class="prompt">
+                                                <p>Обязательное поле</p>
+                                            </div>
+                                        </div> <!--Картинка-->
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-styling" type="tel" name="tel" placeholder="" required/>
+
+                                    </div>
+                                </div>
+
+
+                                <label for="backup-communication" id="backup-communication">Резервный способ связи
+                                    (например, ник в телеграм)</label>
+
+                                <div class="inputs">
+                                    <div class="img">
+                                        <div class="picture">
+                                            <div class="prompt">
+                                                <p>Обязательное поле</p>
+                                            </div>
+                                        </div> <!--Картинка-->
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-styling" type="text" name="client-chat" placeholder=""
+                                               required/>
+
+                                    </div>
+                                </div>
+
+
+                                <label for="to-materials" id="to-materials">Ссылка на материалы (Яндекс.диск, Google
+                                    drive и т.д.)</label>
+
+                                <div class="inputs">
+                                    <div class="img">
+                                        <div class="picture">
+                                            <div class="prompt">
+                                                <p>Обязательное поле</p>
+                                            </div>
+                                        </div> <!--Картинка-->
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-styling" type="text" id="link-mat" name="linkmat" placeholder="" required/>
+
+                                    </div>
+                                </div>
+
+                                <label for="format-crt">Выберите формат вашего видео</label>
+                                <select name="format" id="format-crt" required>
+                                    <option selected value="PODCAST">Видеоподкаст, интервью</option>
+                                    <option value="LESSON">Видеоурок, видеолекция, "говорящая голова"</option>
+                                    <option value="REELS">Вертикальные видео (Reels, Shorts)</option>
+                                    <option value="LED">Запись на прозрачной LED-доске</option>
+                                    <option value="OTHER">Другое</option>
+                                </select>
+
+                                <label for="cameras-crt">Количество камер на съемках </label>
+                                <select name="cameras" id="cameras-crt" required>
+                                    <option selected value="ONE">1 камера</option>
+                                    <option value="TWO">2 камеры</option>
+                                    <option value="THREE">3 камеры</option>
+                                    <option value="FOUR">4 камеры</option>
+                                    <option value="FIVE">5 камер</option>
+                                </select>
+
+                                <label for="chrono-crt">Хронометраж готового видео </label>
+
+                                <div class="inputs">
+                                    <div class="img">
+                                        <div class="picture">
+                                            <div class="prompt">
+                                                <p>Обязательное поле</p>
+                                            </div>
+                                        </div> <!--Картинка-->
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-styling" type="time" name="сhrono" id="chrono-crt"
+                                               placeholder=""
+                                               required/>
+
+                                    </div>
+                                </div>
+
+
+                                <label for="deadline-crt">Дедлайн проекта (до какой даты необходим готовый
+                                    ролик)</label>
+                                <div class="inputs">
+                                    <div class="img">
+                                        <div class="picture">
+                                            <div class="prompt">
+                                                <p>Обязательное поле</p>
+                                            </div>
+                                        </div> <!--Картинка-->
+                                    </div>
+                                    <div class="input">
+                                        <input type="date" value="" class="form-styling" name="deadline"
+                                               id="deadline-crt" required/>
+
+                                    </div>
+                                </div>
+
+
+                                <label for="tech-task" id="tech-task">Ссылка на тех. задание (С четкими таймингами и /
+                                    или сценариями, если есть в наличии)</label>
+                                <input class="form-styling" type="text" id="tech-task-inp" name="tasklink" placeholder=""/>
+                                <div class="choosebox">
+
+                                    <div class="choose">
+                                        <label for="color-choose" id="color-choose">Цветокоррекция</label>
+                                        <label class="checkbox style-e">
+                                            <input type="checkbox" id="color-check"/>
+                                            <div class="checkbox__checkmark"></div>
+                                        </label>
+                                    </div>
+
+
+                                    <label for="cut-reels-crt">Нарезать вертикальные видео (REELS)</label>
+                                    <select name="cut-reels" id="cut-reels-crt" required>
+                                        <option selected value="NONE">Нет</option>
+                                        <option value="LESS_TWO">1-2</option>
+                                        <option value="LESS_FOUR">3-4</option>
+                                        <option value="MORE_FIVE">5+</option>
+                                    </select>
+
+
+                                    <div class="choose">
+                                        <label for="subtitles" id="subtitles">Субтитры для вертикального видео</label>
+                                        <label class="checkbox style-e">
+                                            <input type="checkbox" id="sub-check"/>
+                                            <div class="checkbox__checkmark"></div>
+                                        </label>
+                                    </div>
+
+
+                                    <div class="choose">
+                                        <label for="subtitles" id="teaser-label">Тизер (нарезка интересных моментов в
+                                            начале ролика)</label>
+                                        <label class="checkbox style-e">
+                                            <input type="checkbox" id="teaser"/>
+                                            <div class="checkbox__checkmark"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+
+                    <div class="confirm">
+                        <div class="confirm-btn">
+                            <button class="btn-logout" id="cancel-btn1" onclick="document.location='#close'">Отмена
+                            </button>
+                            <button class="btn-logout" id="confirm-btn" type="submit">Подтвердить</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="orders" id="orders">
+
+    </div>
+
+
+    <div class="modal-box" id="modal2">
+        <div class="modal-table">
+
+        </div>
+
+        <div class="modal-cell">
+
+        </div>
+
+
+        <div class="modal-window2 cyan" id="order-info-full">
+            <!--Прелоадер-->
+
+            <div class="mask2">
+                <div class="loader2">
+                </div>
+            </div>
+
+            <div class="confirm" id="order-info-close">
+                <div class="confirm-btn">
+                    <button class="btn-logout-modal" id="cancel" onclick="modal2Close()">Закрыть</button>
+                    <button class="btn-logout" id="save-btn" type="submit">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-box" id="modal8">
+        <div class="modal-table">
+            <div class="modal-cell">
+                <div class="modal-window cyan" style="min-height: 250px">
+                    <h2>Профиль Исполнителя</h2>
+                    <div class="order-menu">
+                        <div class="profile-info">
+                            <label for="worker-surname" class="user-info" id="worker-surname"></label>
+                            <label for="worker-name" class="user-info" id="worker-name"></label>
+                        </div>
+
+
+                        <div class="profile-info">
+                            <label class="worker-info" id="worker-info1">Почта:</label>
+                            <label class="worker-info" id="worker-content1"></label>
+                        </div>
+
+                        <div class="profile-info">
+                            <label class="worker-info" id="worker-info2">Телефон:</label>
+                            <label class="worker-info" id="worker-content2"></label>
+                        </div>
+                    </div>
+
+
+                    <div class="confirm">
+                        <div class="confirm-btn">
+                            <button class="btn-logout" id="cancel-btn" onclick="document.location='#close'">Закрыть
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-box" id="modal4">
+    <div class="modal-table">
+        <div class="modal-cell" id="pravki-modal-cell">
+            <div class="modal-window cyan" id="pravki-inner">
+                <h2>Принять работу</h2>
+                <div className="order-menu">
+                    <label id="pravki">Правки (вернуть заказ в работу)</label>
+                    <label className="checkbox style-e">
+                        <input type="checkbox" id="pravki-checkbox"/>
+                    </label>
+                    <textarea name="info" id="pravki-about" cols="30" rows="10"></textarea>
+                </div>
+                <div className="confirm">
+                    <div className="confirm-btn">
+                        <button className="btn-logout" id="pravki-btn-cncl" onClick="modal4Close()">Отмена</button>
+                        <button className="btn-logout" id="pravki-btn" onClick="sendPravki('orderId')">Принять/Вернуть
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+<script src="/static/js/client.js"></script>
+</html>

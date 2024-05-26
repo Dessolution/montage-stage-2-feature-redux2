@@ -1,0 +1,118 @@
+.Notifications {
+  display: inline-block;
+  position: relative;
+  margin-top: 60px;
+}
+
+.Notifications__title {
+  font-size: 24px;
+  font-family: montserratBold;
+  line-height: 32px;
+}
+
+.Notifications__line {
+  width: 1022px;
+  height: 1px;
+  background-color: #C6C7CD;
+  margin: 31.5px 0px;
+}
+
+.emailSettings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.emailSettings__title {
+  font-family: montserratSemiBold;
+  height: 48px;
+  width: 351px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.emailSettings__checkboxArea {
+  width: 520px;
+  height: 208px;
+  display: flex;
+  gap: 16px;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.push {
+  display: flex;
+  justify-content: space-between;
+}
+
+.push__title {
+  font-family: montserratSemiBold;
+  height: 24px;
+  width: 351px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.push__checkboxArea {
+  display: flex;
+  height: 152px;
+  width: 520px;
+  gap: 16px;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.linkUrAcc {
+  display: flex;
+  height: 64px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.linkUrAcc .textArea {
+  font-family: montserratRegular;
+}
+
+.linkUrAcc .textArea__title {
+  font-family: montserratSemiBold;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.linkUrAcc .textArea__subTitle {
+  color: #757B8A;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.linkUrAcc .linkUrAcc__form {
+  display: flex;
+  width: 520px;
+  height: 48px;
+  position: relative;
+  bottom: 6px;
+}
+
+.linkUrAcc .linkUrAcc__form  {
+  width: 520px;
+  align-self: start;
+  border-radius: 8px;
+  height: 48px;
+  font-family: montserratRegular;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.linkUrAcc .linkUrAcc__form .saveButton {
+  font-family: montserratRegular;
+  font-size: 16px;
+  line-height: 24px;
+  width: 186px;
+  height: 48px;
+  border-radius: 0px 8px 8px 0px;
+  background-color: #FF4C4B;
+  color: white;
+}
+

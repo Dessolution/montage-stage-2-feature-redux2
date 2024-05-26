@@ -1,0 +1,86 @@
+/* для элемента input c type="radio" */
+.custom-radio>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* для элемента label связанного с .custom-radio */
+.custom-radio>span {
+    display: flex;
+    align-items: center;
+    padding: 16px 16px;    
+    user-select: none;
+}
+
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio>span::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid rgb(202, 202, 202, 1);
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на радио */
+.custom-radio>input:not(:disabled):not(:checked)+span:hover::before {
+    border: 2px solid #FF4C4B;
+    height: 24px;
+}
+
+/* стили для активной радиокнопки (при нажатии на неё) */
+.custom-radio>input:not(:disabled):active+span::before {
+    background-color: #FF4C4B;
+    /* border-color: #FF4C4B; */
+}
+
+/* стили для радиокнопки, находящейся в фокусе */
+.custom-radio>input:focus+span::before {
+    box-shadow: 0 0 0 0.2rem #FF4C4B;
+}
+
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.custom-radio>input:focus:not(:checked)+span::before {
+    border-color: #FF4C4B;
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio>input:checked+span::before {
+    border-color: #FF4C4B;
+    background-color: #FF4C4B;
+    width: 24px;
+    height: 24px;
+    background-image: url('../../assets/images/radioChecked.svg');
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled  */
+.custom-radio>input:disabled+span::before {
+    background-color: #EFEFEF;
+    border-color: #EFEFEF;
+}
+/* стили для радиокнопки, находящейся в состоянии disabled checked */
+.custom-radio>input:disabled:checked+span::before {
+    background-color: #EFEFEF;
+    background-image: url('../../assets/images/diabledCheckedRadiobutton.svg');
+    border-color: #EFEFEF;
+}
+
+.Span__field{
+    width: 100%;
+    max-height: auto;
+    cursor: pointer;
+}
+
+.Order__progressBar_element {
+    user-select: none;
+    max-width: 85px;
+    max-height: 56px;
+}

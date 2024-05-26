@@ -1,0 +1,16 @@
+.Linked__orders{
+    width: 1548px;
+    min-height: 250px;
+    margin-top: 16px;
+}
+
+.Chat{
+    width: 150px;
+    height: 40px;
+    background-color: #FF4C4B;
+    margin-bottom: 50px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: montserratRegular;
+}
